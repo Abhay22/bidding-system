@@ -3,7 +3,7 @@ package com.test.biddingsystem.status;
 import org.springframework.http.HttpStatus;
 
 public enum BiddingStatus {
-    BID_ACCEPTED("Bid is accepted", HttpStatus.OK),
+    BID_ACCEPTED("Bid is accepted", HttpStatus.CREATED),
     BID_NOT_FOUND("Auction not found", HttpStatus.NOT_FOUND),
     BID_REJECTED("Bid is rejected", HttpStatus.NOT_ACCEPTABLE),
     BAD_REQUEST("BAD REQUEST", HttpStatus.BAD_REQUEST),

@@ -4,7 +4,6 @@ import com.test.biddingsystem.entity.AuctionEntity;
 import com.test.biddingsystem.model.BiddingRequest;
 import com.test.biddingsystem.service.AuctionServiceImpl;
 import com.test.biddingsystem.service.BiddingService;
-import com.test.biddingsystem.status.AuctionStatus;
 import com.test.biddingsystem.status.BiddingStatus;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -41,12 +40,13 @@ public class AuctionController {
         List<AuctionEntity> auctions = auctionService.fetchAllAuctions(status);
         return new ResponseEntity<>(auctions, HttpStatus.OK);
     }
+
     @PostMapping("/auction/{item_code}/bid")
-    public ResponseEntity<String> placeBid(@PathVariable("item_code") String itemCode ,
+    public ResponseEntity<String> placeBid(@PathVariable("item_code") String itemCode,
                                            @RequestBody BiddingRequest biddingRequest) {
         logger.info(biddingRequest.toString());
-        if(StringUtils.isBlank(itemCode)){
-            return new ResponseEntity<>(BiddingStatus.BAD_REQUEST.getReason(),HttpStatus.BAD_REQUEST);
+        if (StringUtils.isBlank(itemCode)) {
+            return new ResponseEntity<>(BiddingStatus.BAD_REQUEST.getReason(), HttpStatus.BAD_REQUEST);
         }
         biddingRequest.setItemCode(itemCode);
         BiddingStatus biddingStatus = biddingService.bidProcessing(biddingRequest);
