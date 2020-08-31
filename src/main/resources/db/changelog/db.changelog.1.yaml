@@ -1,0 +1,46 @@
+databaseChangeLog:
+ - changeSet:
+    id: auction-1
+    author: admin
+    comment: create table auction this table contains all auctions
+    changes:
+     - createTable:
+         tableName: auction
+         columns:
+           - column:
+               name: item_id
+               type: int
+               constraints:
+                 nullable: false
+                 unique: true
+                 primaryKey: true
+                 autoIncrement: true
+           - column:
+               name: item_code
+               type: varchar2(50)
+               constraints:
+                 nullable: false
+           - column:
+               name: base_price
+               type: int
+               constraints:
+                 nullable: false
+           - column:
+               name: bid_price
+               type: int
+               constraints:
+                 nullable: false
+           - column:
+               name: step_rate
+               type: int
+               constraints:
+                 nullable: false
+           - column:
+               name: status
+               type: varchar2(50)
+               constraints:
+                 nullable: false
+           - column:
+               name: VERSION
+               type: int
+               defaultValue: 0

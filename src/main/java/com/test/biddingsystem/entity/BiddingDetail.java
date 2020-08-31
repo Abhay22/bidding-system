@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "BIDDING_INFO")
+@Table(name = "BIDDING_DETAIL")
 @NoArgsConstructor
 @AllArgsConstructor
 public class BiddingDetail {

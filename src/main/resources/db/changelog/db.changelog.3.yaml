@@ -1,0 +1,30 @@
+databaseChangeLog:
+ - changeSet:
+    id: BIDDING_DETAIL-1
+    author: admin
+    comment: create table user this table contains all users
+    changes:
+     - createTable:
+         tableName: BIDDING_DETAIL
+         columns:
+           - column:
+               name: id
+               type: int
+               constraints:
+                 nullable: false
+                 autoIncrement: true
+           - column:
+               name: item_id
+               type: int
+               constraints:
+                 nullable: false
+           - column:
+               name: user_name
+               type: varchar2(50)
+               constraints:
+                 nullable: false
+           - column:
+               name: bid_price
+               type: varchar2(50)
+               constraints:
+                 nullable: false
