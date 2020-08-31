@@ -15,13 +15,12 @@ import java.util.List;
 public class AuctionServiceImpl implements AuctionService {
     private static final Logger logger = LoggerFactory.getLogger(AuctionServiceImpl.class);
 
-//    private final AuctionRepository auctionRepository;
-//
-//    public AuctionServiceImpl(AuctionRepository auctionRepository) {
-//        this.auctionRepository = auctionRepository;
-//    }
-@Autowired
-private AuctionRepository auctionRepository;
+    private final AuctionRepository auctionRepository;
+
+    public AuctionServiceImpl(AuctionRepository auctionRepository) {
+        this.auctionRepository = auctionRepository;
+    }
+
     @Override
     public List<AuctionEntity> fetchAllAuctions() {
         List<AuctionEntity> auctionList = new ArrayList<>();
@@ -29,7 +28,7 @@ private AuctionRepository auctionRepository;
         if (!auctionList.isEmpty()) {
             return auctionList;
         } else {
-            logger.info("No auction found");
+            logger.info("No auction available");
             return new ArrayList<>();
         }
     }
