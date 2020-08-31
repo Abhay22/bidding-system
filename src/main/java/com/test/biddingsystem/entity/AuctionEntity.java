@@ -11,14 +11,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Version;
-import java.io.Serializable;
 
 @Data
 @Entity
 @Table(name = "AUCTION")
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuctionEntity implements Serializable {
+public class AuctionEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

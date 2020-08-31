@@ -1,6 +1,7 @@
 package com.test.biddingsystem.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,8 +10,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Data
 @Entity
+@Data
+@Builder
 @Table(name = "BIDDING_DETAIL")
 @NoArgsConstructor
 @AllArgsConstructor

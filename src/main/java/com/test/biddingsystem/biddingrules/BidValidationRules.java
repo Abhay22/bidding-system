@@ -2,8 +2,10 @@ package com.test.biddingsystem.biddingrules;
 
 import com.test.biddingsystem.entity.AuctionEntity;
 import com.test.biddingsystem.model.BiddingRequest;
+import org.springframework.stereotype.Component;
 
-public class BiddingStepRateRule implements BiddingRules<AuctionEntity, BiddingRequest> {
+@Component
+public class BidValidationRules implements BiddingRules<AuctionEntity, BiddingRequest> {
     @Override
     public boolean apply(AuctionEntity auctionEntity,BiddingRequest biddingRequest) {
         //initial bid
