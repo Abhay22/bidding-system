@@ -8,8 +8,11 @@ databaseChangeLog:
             tableName: auction
             columns:
               - column:
+                  name: item_id
+                  valueNumeric: "1001"
+              - column:
                   name: item_code
-                  value: "Mpjk89we"
+                  value: "iHpTrbC3wl"
               - column:
                   name: base_price
                   valueNumeric: "4000"
@@ -22,12 +25,18 @@ databaseChangeLog:
               - column:
                   name: status
                   value: "RUNNING"
+              - column:
+                  name: version
+                  valueNumeric: "1"
         - insert:
             tableName: auction
             columns:
               - column:
+                  name: item_id
+                  valueNumeric: "1002"
+              - column:
                   name: item_code
-                  value: "KLok12de"
+                  value: "RbXq9aArFC"
               - column:
                   name: base_price
                   valueNumeric: "2000"
@@ -40,12 +49,18 @@ databaseChangeLog:
               - column:
                   name: status
                   value: "RUNNING"
+              - column:
+                  name: version
+                  valueNumeric: "1"
         - insert:
             tableName: auction
             columns:
               - column:
+                  name: item_id
+                  valueNumeric: "1003"
+              - column:
                   name: item_code
-                  value: "DYsn70ni"
+                  value: "2KIADt74uI"
               - column:
                   name: base_price
                   valueNumeric: "3500"
@@ -58,3 +73,6 @@ databaseChangeLog:
               - column:
                   name: status
                   value: "RUNNING"
+              - column:
+                  name: version
+                  valueNumeric: "1"
