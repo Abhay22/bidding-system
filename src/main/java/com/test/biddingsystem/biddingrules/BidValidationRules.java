@@ -10,8 +10,8 @@ public class BidValidationRules implements BiddingRules<AuctionEntity, BiddingRe
     public boolean apply(AuctionEntity auctionEntity,BiddingRequest biddingRequest) {
         //initial bid
         if(auctionEntity.getBidPrice() == 0){
-            return biddingRequest.getBidAmount() > auctionEntity.getBasePrice()+auctionEntity.getStepRate();
+            return biddingRequest.getBidAmount() >= auctionEntity.getBasePrice()+auctionEntity.getStepRate();
         }
-        return biddingRequest.getBidAmount() > auctionEntity.getBidPrice()+auctionEntity.getStepRate();
+        return biddingRequest.getBidAmount() >= auctionEntity.getBidPrice()+auctionEntity.getStepRate();
     }
 }
