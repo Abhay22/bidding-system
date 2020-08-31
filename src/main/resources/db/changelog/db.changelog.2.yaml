@@ -1,32 +1,30 @@
 databaseChangeLog:
  - changeSet:
-    id: user-1
+    id: BIDDING_DETAIL-1
     author: admin
-    comment: create table user this table contains all users
+    comment: create table BIDDING_DETAIL this table contains all bidding detail
     changes:
      - createTable:
-         tableName: user
+         tableName: BIDDING_DETAIL
          columns:
            - column:
-               name: user_id
+               name: id
                type: int
                constraints:
                  nullable: false
-                 unique: true
-                 primaryKey: true
                  autoIncrement: true
            - column:
-               name: name
+               name: item_id
+               type: int
+               constraints:
+                 nullable: false
+           - column:
+               name: user_name
                type: varchar2(50)
                constraints:
                  nullable: false
            - column:
-               name: email
-               type: varchar2(50)
-               constraints:
-                 nullable: false
-           - column:
-               name: phone
+               name: bid_price
                type: varchar2(50)
                constraints:
                  nullable: false

@@ -1,30 +1,60 @@
 databaseChangeLog:
- - changeSet:
-    id: BIDDING_DETAIL-1
-    author: admin
-    comment: create table user this table contains all users
-    changes:
-     - createTable:
-         tableName: BIDDING_DETAIL
-         columns:
-           - column:
-               name: id
-               type: int
-               constraints:
-                 nullable: false
-                 autoIncrement: true
-           - column:
-               name: item_id
-               type: int
-               constraints:
-                 nullable: false
-           - column:
-               name: user_name
-               type: varchar2(50)
-               constraints:
-                 nullable: false
-           - column:
-               name: bid_price
-               type: varchar2(50)
-               constraints:
-                 nullable: false
+  - changeSet:
+      id: populate-1
+      author: admin
+      comment: populate auctions
+      changes:
+        - insert:
+            tableName: auction
+            columns:
+              - column:
+                  name: item_code
+                  value: "Mpjk89we"
+              - column:
+                  name: base_price
+                  valueNumeric: "4000"
+              - column:
+                  name: bid_price
+                  valueNumeric: "1"
+              - column:
+                  name: step_rate
+                  valueNumeric: "200"
+              - column:
+                  name: status
+                  value: "RUNNING"
+        - insert:
+            tableName: auction
+            columns:
+              - column:
+                  name: item_code
+                  value: "KLok12de"
+              - column:
+                  name: base_price
+                  valueNumeric: "2000"
+              - column:
+                  name: bid_price
+                  valueNumeric: "1"
+              - column:
+                  name: step_rate
+                  valueNumeric: "100"
+              - column:
+                  name: status
+                  value: "RUNNING"
+        - insert:
+            tableName: auction
+            columns:
+              - column:
+                  name: item_code
+                  value: "DYsn70ni"
+              - column:
+                  name: base_price
+                  valueNumeric: "3500"
+              - column:
+                  name: bid_price
+                  valueNumeric: "1"
+              - column:
+                  name: step_rate
+                  valueNumeric: "300"
+              - column:
+                  name: status
+                  value: "RUNNING"
