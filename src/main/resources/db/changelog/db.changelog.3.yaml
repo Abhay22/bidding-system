@@ -76,3 +76,27 @@ databaseChangeLog:
               - column:
                   name: version
                   valueNumeric: "1"
+        - insert:
+            tableName: auction
+            columns:
+              - column:
+                  name: item_id
+                  valueNumeric: "1004"
+              - column:
+                  name: item_code
+                  value: "2BMADt94uI"
+              - column:
+                  name: base_price
+                  valueNumeric: "3500"
+              - column:
+                  name: bid_price
+                  valueNumeric: "10000"
+              - column:
+                  name: step_rate
+                  valueNumeric: "300"
+              - column:
+                  name: status
+                  value: "OVER"
+              - column:
+                  name: version
+                  valueNumeric: "1"

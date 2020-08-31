@@ -4,6 +4,7 @@ import com.test.biddingsystem.entity.AuctionEntity;
 import com.test.biddingsystem.model.BiddingRequest;
 import com.test.biddingsystem.service.AuctionServiceImpl;
 import com.test.biddingsystem.service.BiddingService;
+import com.test.biddingsystem.status.AuctionStatus;
 import com.test.biddingsystem.status.BiddingStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,7 +35,7 @@ public class AuctionController {
 
     @GetMapping("/auctions")
     public ResponseEntity<List<AuctionEntity>> getAuctions() {
-        List<AuctionEntity> auctions = auctionService.fetchAllAuctions();
+        List<AuctionEntity> auctions = auctionService.fetchAllAuctions(AuctionStatus.RUNNING.getStatus());
         return new ResponseEntity<>(auctions, HttpStatus.OK);
     }
     @PostMapping("/placeBid")

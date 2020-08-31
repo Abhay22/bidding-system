@@ -20,10 +20,9 @@ public class AuctionServiceImpl implements AuctionService {
     }
 
     @Override
-    public List<AuctionEntity> fetchAllAuctions() {
-        List<AuctionEntity> auctionList = new ArrayList<>();
-        auctionRepository.findAll().forEach(auctionList::add);
-        if (!auctionList.isEmpty()) {
+    public List<AuctionEntity> fetchAllAuctions(String status) {
+        List<AuctionEntity> auctionList = auctionRepository.findAll(status);
+        if (null!=auctionList && !auctionList.isEmpty()) {
             return auctionList;
         } else {
             logger.info("No auction available");

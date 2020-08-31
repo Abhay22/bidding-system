@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class AuctionDetail {
     private String itemCode;
     private int  basePrice;
+    private int  bidPrice;
     private String status;
     private int stepRate;
 }
