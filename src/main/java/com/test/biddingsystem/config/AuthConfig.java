@@ -1,4 +1,3 @@
-/*
 package com.test.biddingsystem.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,12 +28,12 @@ public class AuthConfig extends AuthorizationServerConfigurerAdapter {
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 
         clients.inMemory()
-                .withClient("myClient")
+                .withClient("bidclient")
                 .authorizedGrantTypes("password", "authorization_code", "refresh_token", "implicit")
                 .authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT", "USER")
                 .scopes("read", "write")
                 .autoApprove(true)
-                .secret(passwordEncoder().encode("admin@1234"));
+                .secret(passwordEncoder().encode("password"));
 
     }
 
@@ -55,4 +54,3 @@ public class AuthConfig extends AuthorizationServerConfigurerAdapter {
         return new InMemoryTokenStore();
     }
 }
-*/

@@ -1,4 +1,3 @@
-/*
 package com.test.biddingsystem.config;
 
 
@@ -13,14 +12,13 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers("/h2-console", "/oauth/token", "/oauth/authorize**",
-                "/bidding_system/v1/auction?status=*").permitAll();
+                "/bidding_system/v1/auction**").permitAll();
 
-        http.requestMatchers().antMatchers("/auction/{item_code}/bid")
+        http.requestMatchers().antMatchers("/bidding_system/v1/place/**")
                 .and().authorizeRequests()
-                .antMatchers("/auction/{item_code}/bid").access("hasRole('USER')")
+                .antMatchers("/bidding_system/v1/place/**").access("hasRole('USER')")
                 .and().requestMatchers().antMatchers("/admin")
                 .and().authorizeRequests()
                 .antMatchers("/admin").access("hasRole('ADMIN')");
     }
 }
-*/

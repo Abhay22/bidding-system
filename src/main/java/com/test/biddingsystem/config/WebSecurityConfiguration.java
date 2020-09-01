@@ -1,4 +1,3 @@
-/*
 package com.test.biddingsystem.config;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,20 +25,12 @@ class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     public UserDetailsService userDetailsService() {
 
-        UserDetails user= User.builder().username("user").password(new BCryptPasswordEncoder().encode("secret")).
+        UserDetails user= User.builder().username("user").password(new BCryptPasswordEncoder().encode("user@123")).
                 roles("USER").build();
-        UserDetails userAdmin=User.builder().username("admin").password(new BCryptPasswordEncoder().encode("secret")).
+        UserDetails userAdmin=User.builder().username("admin").password(new BCryptPasswordEncoder().encode("admin@123")).
                 roles("ADMIN").build();
         return new InMemoryUserDetailsManager(user,userAdmin);
     }
-
-  */
-/* @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-*//*
-
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -49,23 +40,5 @@ class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         http.csrf().disable();
         http.headers().frameOptions().disable();
-
-
-        */
-/*http
-                .csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/h2-console/**").permitAll()
-                .antMatchers("/","/index","/webpublico").permitAll()
-                .antMatchers("/webprivado").authenticated()
-                .antMatchers("/webadmin").hasRole("ADMIN").and()
-                .formLogin()
-                .loginPage("/login")
-                .permitAll()
-                .and()
-                .logout() // Metodo get pues he desabilitado CSRF
-                .permitAll();*//*
-
     }
 }
-*/

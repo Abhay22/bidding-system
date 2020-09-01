@@ -1,5 +1,6 @@
 package com.test.biddingsystem.controller;
 
+import com.test.biddingsystem.config.ResourceConfig;
 import com.test.biddingsystem.entity.AuctionEntity;
 import com.test.biddingsystem.model.BiddingRequest;
 import com.test.biddingsystem.service.AuctionServiceImpl;
@@ -10,7 +11,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-//import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfiguration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,10 +23,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-//@EnableResourceServer
+@EnableResourceServer
 @RestController
 @RequestMapping("/bidding_system/v1")
-public class AuctionController {
+public class AuctionController extends ResourceConfig {
 
     private static final Logger logger = LoggerFactory.getLogger(AuctionController.class);
 
@@ -43,7 +45,7 @@ public class AuctionController {
         return new ResponseEntity<>(auctions, HttpStatus.OK);
     }
 
-    @PostMapping("/auction/{item_code}/bid")
+    @PostMapping("/place/{item_code}/bid")
     public ResponseEntity<String> placeBid(@PathVariable("item_code") String itemCode,
                                            @RequestBody BiddingRequest biddingRequest) {
         logger.info(biddingRequest.toString());

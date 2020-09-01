@@ -32,7 +32,7 @@ public class BiddingService {
         try {
             AuctionEntity auctionEntity = auctionRepository.findByItemCode(biddingRequest.getItemCode());
             if (null == auctionEntity) {
-                return BiddingStatus.BID_NOT_FOUND;
+                return BiddingStatus.AUCTION_NOT_FOUND;
             }
             // bidding entry
             biddingDetailRepository.save(BiddingDetail.builder().itemId(auctionEntity.getItemId()).
