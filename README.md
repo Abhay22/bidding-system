@@ -14,7 +14,11 @@
 10. Used lombok to generate POJO which reduce code.
 
 ##### Unit test coverage
-<img src="" alt="drawing" width="1000" height="300"/> 
+ * Generate unit test code coverage report 
+ * `./gradle clean build`
+ * Open `build/reports/tests/test/index.html` 
+ 
+<img src="https://github.com/ranjeet1523/bidding-system/blob/master/screenshot/Screen%20Shot%202020-09-01%20at%209.16.16%20PM.png" alt="drawing" width="1000" height="300"/> 
 
 
 ## Steps to run application
@@ -76,7 +80,18 @@
              }
                         
  <img src="https://github.com/ranjeet1523/bidding-system/blob/master/screenshot/Screen%20Shot%202020-09-01%20at%205.58.28%20PM.png" alt="drawing" width="1000" height="300"/> 
- <img src="https://github.com/ranjeet1523/bidding-system/blob/master/screenshot/Screen%20Shot%202020-09-01%20at%205.58.41%20PM.png" alt="drawing" width="1000" height="300"/>  
+ <img src="https://github.com/ranjeet1523/bidding-system/blob/master/screenshot/Screen%20Shot%202020-09-01%20at%205.58.41%20PM.png" alt="drawing" width="1000" height="300"/> 
+ 
+ 
+ ##### H2 console access
+ 
+   * url to access h2 console - http://localhost:8080/h2-console/
+   * JDBC URL - `jdbc:h2:mem:testdb`
+   * username - sa
+   * Password - password
+<img src="https://github.com/ranjeet1523/bidding-system/blob/master/screenshot/Screen%20Shot%202020-09-01%20at%208.56.07%20PM.png" alt="drawing" width="1000" height="300"/> 
+   
+   
  
  
 
