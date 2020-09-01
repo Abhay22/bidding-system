@@ -1,3 +1,4 @@
+/*
 package com.test.biddingsystem.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,6 @@ public class AuthConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     @Qualifier("authenticationManagerBean")
     private AuthenticationManager authenticationManager;
-
     @Autowired
     private TokenStore tokenStore;
 
@@ -55,3 +55,4 @@ public class AuthConfig extends AuthorizationServerConfigurerAdapter {
         return new InMemoryTokenStore();
     }
 }
+*/

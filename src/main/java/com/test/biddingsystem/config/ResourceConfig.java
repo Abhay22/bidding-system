@@ -1,3 +1,4 @@
+/*
 package com.test.biddingsystem.config;
 
 
@@ -11,8 +12,9 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 public class ResourceConfig extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests().antMatchers("/h2-console", "/oauth/token", "/oauth/authorize**", "/bidding_system/v1/auction").permitAll();
+        http.authorizeRequests().antMatchers("/h2-console", "/oauth/token", "/oauth/authorize**",
+                "/bidding_system/v1/auction?status=*").permitAll();
+
         http.requestMatchers().antMatchers("/auction/{item_code}/bid")
                 .and().authorizeRequests()
                 .antMatchers("/auction/{item_code}/bid").access("hasRole('USER')")
@@ -21,3 +23,4 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
                 .antMatchers("/admin").access("hasRole('ADMIN')");
     }
 }
+*/

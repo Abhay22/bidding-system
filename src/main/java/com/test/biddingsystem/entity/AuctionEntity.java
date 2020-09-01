@@ -3,6 +3,7 @@ package com.test.biddingsystem.entity;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,6 +17,7 @@ import javax.persistence.Version;
 
 @Data
 @Entity
+@Builder
 @Table(name = "AUCTION")
 @NoArgsConstructor
 @AllArgsConstructor
