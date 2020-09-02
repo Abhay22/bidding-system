@@ -18,7 +18,7 @@ databaseChangeLog:
                   valueNumeric: "4000"
               - column:
                   name: bid_price
-                  valueNumeric: "1"
+                  valueNumeric: "0"
               - column:
                   name: step_rate
                   valueNumeric: "200"
@@ -42,7 +42,7 @@ databaseChangeLog:
                   valueNumeric: "2000"
               - column:
                   name: bid_price
-                  valueNumeric: "1"
+                  valueNumeric: "0"
               - column:
                   name: step_rate
                   valueNumeric: "100"
@@ -66,7 +66,7 @@ databaseChangeLog:
                   valueNumeric: "3500"
               - column:
                   name: bid_price
-                  valueNumeric: "1"
+                  valueNumeric: "0"
               - column:
                   name: step_rate
                   valueNumeric: "300"
